@@ -10,7 +10,10 @@ Follow these steps before the login code section of your app:
 
 1. Create an instance of the class with two parameters: the file path of the sqlite db file (it will be created the first time you use the class) and an email, username or whatever field you use to identify who is trying to login. It is recommended to provide a path _outside_ the web document root (remember to give write permissions on that folder to your web server user).
 
-`$blacklist = new Blacklist('/usr/local/loginBlacklist.db', 'test@test.com');`
+```
+include 'Blacklist.php';
+$blacklist = new Blacklist('/usr/local/loginBlacklist.db', 'test@test.com');
+```
 
 2. Call the _canLogin_ method. A hash will be returned with two members: 
 
